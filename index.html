@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Himi PC — голосовой ассистент для компьютера</title>
+  <meta name="description" content="Himi PC — голосовой ассистент для Windows: управляет компьютером, играми из Steam, OBS и Twitch. Речь распознаётся прямо на вашем ПК.">
+  <meta name="theme-color" content="#08080F">
+  <link rel="icon" href="assets/logo.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">К содержанию</a>
+<div class="glow" aria-hidden="true"></div>
+
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="assets/logo_64.png" alt="" width="36" height="36">
+      <span>Himi PC<small>голосовой ассистент</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Разделы">
+      <a href="#features">Возможности</a>
+      <a href="#streamers">Стримерам</a>
+      <a href="#pricing">Тарифы</a>
+      <a href="#faq">Вопросы</a>
+      <a href="guide.html">Инструкция</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn-sm" href="#download">Скачать</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Меню" aria-controls="nav" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ первый экран ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <div class="badge">Windows 10 / 11 · версия 2.0</div>
+        <h1>Скажите <span class="grad">«Хими»</span> — и компьютер сделает остальное</h1>
+        <p class="lead">Голосовой ассистент, который запускает игры и программы, управляет музыкой, OBS и Twitch-каналом, ставит таймеры поверх игры и отвечает на вопросы. Речь распознаётся прямо на вашем ПК.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#download">⬇ Скачать бесплатно</a>
+          <a class="btn btn-ghost" href="#pricing">Тарифы</a>
+        </div>
+        <p class="hero-note">Бесплатный тариф без ограничений по времени. Регистрация не нужна.</p>
+      </div>
+      <!-- Окно программы: как Himi PC выглядит на самом деле (client/ui/app.py) -->
+      <div class="app-window" role="img" aria-label="Окно программы Himi PC: пример диалога с голосовыми командами">
+        <div class="aw-title">
+          <span class="aw-name">Himi PC</span>
+          <span class="aw-controls" aria-hidden="true"><i>—</i><i>▢</i><i>✕</i></span>
+        </div>
+        <div class="aw-body">
+          <aside class="aw-side" aria-hidden="true">
+            <div class="aw-brand">Himi PC<small>голосовой ассистент</small></div>
+            <div class="aw-menu">
+              <span class="on">◉ Ассистент</span>
+              <span>◎ Кабинет</span>
+              <span>⚙ Настройки</span>
+            </div>
+            <div class="aw-status" id="awStatus"><span class="aw-dot"></span><span id="awStatusText">Слушаю · точный слух</span></div>
+          </aside>
+          <div class="aw-main">
+            <div class="aw-head" aria-hidden="true">
+              <b>Ассистент</b>
+              <span class="aw-chip">ИИ: 37 / 3000</span>
+              <span class="aw-chip pink">Стример</span>
+            </div>
+            <div class="aw-chat" id="chat" aria-hidden="true"></div>
+            <div class="aw-input" aria-hidden="true">
+              <span id="awInput" class="aw-placeholder">Напишите команду… или скажите «Хими, …»</span>
+              <span class="aw-send">➤</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ возможности ============ -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Возможности</div>
+        <h2>Пульт от компьютера, который понимает речь</h2>
+        <p>Большинство команд выполняются мгновенно и без интернета — Хими не ждёт облако, чтобы сделать громче.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card feature reveal"><div class="icon">🎮</div><h3>Игры и программы</h3>
+          <p>«Запусти доту», «открой дискорд» — Хими найдёт игру в библиотеке Steam или любую программу из меню «Пуск».</p></article>
+        <article class="card feature cyan reveal"><div class="icon">🎵</div><h3>Музыка и видео</h3>
+          <p>Пауза, следующий трек, громкость, «моя волна» в Яндекс Музыке, поиск фильма на Кинопоиске и видео на YouTube.</p></article>
+        <article class="card feature pink reveal"><div class="icon">⏱</div><h3>Таймеры поверх игры</h3>
+          <p>Отсчёт в углу экрана поверх игр, клики проходят сквозь него. «Сколько осталось?» — ответит голосом.</p></article>
+        <article class="card feature reveal"><div class="icon">💬</div><h3>Умные ответы</h3>
+          <p>На платных тарифах Хими отвечает на любые вопросы и помнит последние реплики разговора.</p></article>
+        <article class="card feature cyan reveal"><div class="icon">📁</div><h3>Файлы и сайты</h3>
+          <p>Создать папку или файл на рабочем столе, найти папку по всему диску, открыть сайт, загуглить, сделать скриншот.</p></article>
+        <article class="card feature pink reveal"><div class="icon">🫶</div><h3>Поддержка в игре</h3>
+          <p>Если вы кричите в микрофон, Хими скажет пару спокойных слов. Включается в настройках — по желанию.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ демо ============ -->
+  <section class="demo">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Как это звучит</div>
+        <h2>Просто говорите</h2>
+        <p>Кодовое слово «Хими» — и команда. Можно в два шага: «Хими»… пауза… «громче».</p>
+      </div>
+      <ul class="cmd-list">
+        <li class="reveal"><code>«Хими, запусти кс»</code><span>игра из Steam</span></li>
+        <li class="reveal"><code>«Хими, таймер на 10 минут»</code><span>отсчёт поверх игры</span></li>
+        <li class="reveal"><code>«Хими, сделай клип»</code><span>клип на Twitch</span></li>
+        <li class="reveal"><code>«Хими, что такое чёрная дыра?»</code><span>ответ ИИ голосом</span></li>
+        <li class="reveal"><code>«Хими, смени сцену на отошёл»</code><span>сцена в OBS</span></li>
+        <li class="reveal"><code>«Хими, моя волна»</code><span>Яндекс Музыка</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ стримерам ============ -->
+  <section id="streamers">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Тариф «Стример»</div>
+        <h2>Руки на клавиатуре — эфир под контролем</h2>
+        <p>Хими управляет трансляцией голосом, пока вы играете: без альт-табов и лишних кнопок.</p>
+      </div>
+      <div class="grid grid-2">
+        <article class="card feature reveal"><div class="icon">🎥</div><h3>OBS Studio</h3>
+          <p>Запуск и остановка стрима и записи, смена сцен по названию: «смени сцену на отошёл».</p></article>
+        <article class="card feature cyan reveal"><div class="icon">🟣</div><h3>Twitch</h3>
+          <p>Клипы одной фразой, бан и таймаут, сообщения в чат, автомодерация мата, оскорблений, флуда и капса.</p></article>
+        <article class="card feature pink reveal"><div class="icon">🔕</div><h3>Донаты</h3>
+          <p>«Заглуши донаты» — звук алертов DonationAlerts, StreamElements и других выключается, анимация остаётся. Может делать это сам, пока идёт игра.</p></article>
+        <article class="card feature reveal"><div class="icon">🧠</div><h3>3000 ИИ-запросов</h3>
+          <p>В три раза больше запросов к ИИ и повышенный лимит частоты — для долгих эфиров.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ приватность ============ -->
+  <section id="privacy-short">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Приватность</div>
+        <h2>Ваш голос остаётся у вас</h2>
+      </div>
+      <div class="privacy-strip">
+        <div class="card reveal"><strong>🎙 Распознавание на ПК</strong><span>Звук не отправляется в интернет и не записывается.</span></div>
+        <div class="card reveal"><strong>🔐 Шифрование</strong><span>Ключи входа зашифрованы средствами Windows, пароли — хешем Argon2id.</span></div>
+        <div class="card reveal"><strong>🇷🇺 Серверы в России</strong><span>Данные аккаунта хранятся в РФ по 152-ФЗ.</span></div>
+        <div class="card reveal"><strong>🗑 Удаление в один клик</strong><span>Аккаунт и все данные удаляются в Личном кабинете.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ тарифы ============ -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Тарифы</div>
+        <h2>Начните бесплатно</h2>
+        <p>Цены указаны в рублях. Платный тариф оплачивается разово на 30 дней, <b>без автопродления</b> — деньги не спишутся без вашего ведома.</p>
+      </div>
+      <div class="plans">
+        <article class="card plan reveal">
+          <h3>Бесплатный</h3>
+          <div class="price">0 ₽</div>
+          <div class="period">навсегда, без регистрации</div>
+          <ul>
+            <li>Громкость, таймер, скриншот, калькулятор</li>
+            <li>Запуск игр из Steam</li>
+            <li>Плеер: пауза и треки</li>
+            <li>Вкладки браузера</li>
+            <li>Файлы и папки на рабочем столе</li>
+          </ul>
+          <a class="btn btn-ghost" href="#download">Скачать</a>
+        </article>
+        <article class="card plan pro reveal">
+          <span class="tag">Популярный</span>
+          <h3>Платный</h3>
+          <div class="price">490 ₽ <small>/ 30 дней</small></div>
+          <div class="period">разовый платёж</div>
+          <ul>
+            <li>Всё из бесплатного</li>
+            <li>ИИ: ответы на любые вопросы — 1000 запросов</li>
+            <li>Память разговора</li>
+            <li>Любые программы, сайты и поиск</li>
+            <li>YouTube, Twitch, VK, Telegram</li>
+            <li>Музыка и фильмы, профили «работа / отдых / игры»</li>
+          </ul>
+          <a class="btn" href="#how">Как подключить</a>
+        </article>
+        <article class="card plan streamer reveal">
+          <h3>Стример</h3>
+          <div class="price">990 ₽ <small>/ 30 дней</small></div>
+          <div class="period">разовый платёж</div>
+          <ul>
+            <li>Всё из «Платного»</li>
+            <li>ИИ — 3000 запросов</li>
+            <li>OBS: стрим, запись, сцены</li>
+            <li>Twitch: клипы, баны, чат, автомодерация</li>
+            <li>Глушение донатов, в том числе в играх</li>
+          </ul>
+          <a class="btn btn-ghost" href="#how">Как подключить</a>
+        </article>
+      </div>
+      <div class="card packs reveal">
+        <div>
+          <h3>Пакет ИИ-запросов</h3>
+          <p class="muted m-0">+100 запросов сверх месячного лимита. Не сгорают в конце месяца и тратятся после основного лимита.</p>
+        </div>
+        <div><div class="muted">на «Платном»</div><div class="price">100 ₽</div></div>
+        <div><div class="muted">на «Стримере»</div><div class="price">150 ₽</div></div>
+      </div>
+      <div class="pay-methods reveal" aria-label="Способы оплаты">
+        <span>Банковские карты</span><span>СБП</span><span>ЮMoney</span><span>Оплата через ЮKassa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ как получить услугу ============ -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Порядок получения услуги</div>
+        <h2>Как подключить тариф</h2>
+        <p>Услуга — доступ к функциям программы Himi PC на 30 дней. Предоставляется в электронном виде, доставки нет.</p>
+      </div>
+      <div class="steps">
+        <div class="card step reveal"><h3>Скачайте</h3><p>Установите Himi PC с этой страницы.</p></div>
+        <div class="card step reveal"><h3>Войдите</h3><p>Зарегистрируйтесь по почте в «Личном кабинете» программы.</p></div>
+        <div class="card step reveal"><h3>Оплатите</h3><p>Выберите тариф и нажмите «Подключить» — откроется защищённая страница оплаты ЮKassa.</p></div>
+        <div class="card step reveal"><h3>Пользуйтесь</h3><p>Тариф включается автоматически в течение 5 минут после оплаты. Чек придёт на почту.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ скачать ============ -->
+  <section class="download" id="download">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="dl-icon" aria-hidden="true">⬇</div>
+        <div>
+          <h2 class="mb-tight">Himi PC для Windows</h2>
+          <p class="meta">Версия 2.0.0 · установщик ~650 МБ · всё нужное уже внутри: ничего не придётся докачивать с других сайтов</p>
+          <p class="hash">SHA-256: <span class="todo">[появится после сборки установщика]</span></p>
+        </div>
+        <a class="btn" href="downloads/HimiPC-Setup-2.0.0.exe" download>⬇ Скачать</a>
+      </div>
+      <div class="grid grid-2 sysreq">
+        <div class="card reveal">
+          <h3>Системные требования</h3>
+          <ul>
+            <li>Windows 10 или 11, 64-бит</li>
+            <li>8 ГБ оперативной памяти (16 ГБ — для «точного слуха»)</li>
+            <li>2 ГБ на диске (+1.3 ГБ для «точного слуха»)</li>
+            <li>Микрофон или гарнитура</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3>Что нужно знать</h3>
+          <ul>
+            <li>Права администратора не нужны</li>
+            <li>«Точный слух» скачивается кнопкой в настройках — только с сервера Himi</li>
+            <li>Обновления подписаны: подменить их нельзя</li>
+            <li>Интернет нужен только для ИИ, онлайн-голоса и входа в аккаунт</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Вопросы</div>
+        <h2>Частые вопросы</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal"><summary>Хими постоянно слушает микрофон — это безопасно?</summary>
+          <p>Да. Речь распознаётся на вашем компьютере, звук никуда не отправляется и не сохраняется. В интернет уходит только текст вопросов к ИИ (на бесплатном тарифе — до 15 в месяц).</p></details>
+        <details class="reveal"><summary>Хими плохо слышит или не реагирует на имя</summary>
+          <p>Чаще всего дело в выбранном микрофоне и чувствительности — это настраивается за 2 минуты. Имя нужно говорить в начале фразы: «Хими, открой ютуб». Пошагово, с настройками для игры, стрима, съёмки и слабого ПК — в <a href="guide.html">инструкции</a>.</p></details>
+        <details class="reveal"><summary>Спишутся ли деньги автоматически через месяц?</summary>
+          <p>Нет. Тариф оплачивается разово на 30 дней. Когда срок закончится, программа просто вернётся на бесплатный тариф — продлить можно вручную.</p></details>
+        <details class="reveal"><summary>Можно ли вернуть деньги?</summary>
+          <p>Да. Если тариф не заработал по нашей вине — вернём полностью. Если вы передумали — вернём стоимость неиспользованных дней тарифа и неиспользованные пакеты запросов. Напишите на почту поддержки из раздела «Контакты», ответим в течение 10 рабочих дней. Подробно — в <a href="terms.html#refund">пользовательском соглашении</a>.</p></details>
+        <details class="reveal"><summary>Антивирус ругается на установщик</summary>
+          <p>Новые программы без большой истории иногда вызывают ложные срабатывания. Скачивайте Himi PC только с этого сайта и сверяйте контрольную сумму SHA-256, указанную рядом с кнопкой «Скачать».</p></details>
+        <details class="reveal"><summary>Работает ли без интернета?</summary>
+          <p>Основные команды — да: распознавание речи и управление компьютером работают офлайн. Голос Хими тоже работает без сети. Интернет нужен для входа в аккаунт, ответов ИИ, поиска и Twitch.</p></details>
+        <details class="reveal"><summary>Какие игры понимает Хими?</summary>
+          <p>Любую игру из вашей библиотеки Steam и любую программу из меню «Пуск» или Microsoft Store — по названию, даже если сказать его по-русски или не совсем точно: «запусти капкут», «открой фотошоп».</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ контакты и реквизиты ============ -->
+  <section class="contacts" id="contacts">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Контакты</div>
+        <h2>Связаться с нами</h2>
+      </div>
+      <div class="card reveal">
+        <div>
+          <h3>Поддержка</h3>
+          <dl class="req">
+            <dt>Почта</dt><dd><a href="mailto:support@example.ru" class="todo">[e-mail поддержки]</a></dd>
+            <dt>Telegram</dt><dd class="todo">[@канал или бот]</dd>
+            <dt>Время ответа</dt><dd>в течение 1–2 рабочих дней</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Продавец</h3>
+          <dl class="req">
+            <dt>Исполнитель</dt><dd>Юрко Алла Геннадевна</dd>
+            <dt>Статус</dt><dd>Плательщик налога на профессиональный доход (самозанятый)</dd>
+            <dt>ИНН</dt><dd>561700738809</dd>
+            <dt>Город</dt><dd class="todo">[город]</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>© <span id="year">2026</span> Himi PC · Юрко Алла Геннадевна, ИНН 561700738809</div>
+    <nav aria-label="Документы">
+      <a href="guide.html">Инструкция</a>
+      <a href="terms.html">Пользовательское соглашение (оферта)</a>
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="consent.html">Согласие на обработку данных</a>
+      <a href="terms.html#refund">Возврат средств</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
